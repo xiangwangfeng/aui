@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aui", "aui\aui.vcxproj", "{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcxproj", "{6EB401C7-6DA4-4AAD-AD27-04E0B0E953BA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF} = {FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}.Debug|Win32.Build.0 = Debug|Win32
+		{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}.Release|Win32.ActiveCfg = Release|Win32
+		{FCD59E9D-BF8F-4416-9E5E-2D8A188967DF}.Release|Win32.Build.0 = Release|Win32
+		{6EB401C7-6DA4-4AAD-AD27-04E0B0E953BA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6EB401C7-6DA4-4AAD-AD27-04E0B0E953BA}.Debug|Win32.Build.0 = Debug|Win32
+		{6EB401C7-6DA4-4AAD-AD27-04E0B0E953BA}.Release|Win32.ActiveCfg = Release|Win32
+		{6EB401C7-6DA4-4AAD-AD27-04E0B0E953BA}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
