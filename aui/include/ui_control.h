@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_control.h
- * @brief   UI¿Ø¼ş»ùÀà
+ * @brief   UIæ§ä»¶åŸºç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-22
  * @website www.xiangwangfeng.com
@@ -10,10 +10,10 @@
 #include <vector>
 #include "ui_base.h"
 
-//¶¨Î»·½Ê½
+//å®šä½æ–¹å¼
 enum Alignment
 {
-//¾ø¶Ô¶¨Î»
+//ç»å¯¹å®šä½
 	kAlignmentLeftTop,
 	kAlignmentLeftCenter,
 	kAlignmentLeftBottom,
@@ -23,7 +23,7 @@ enum Alignment
 	kAlignmentRightTop,
 	kAlignmentRightCenter,
 	kAlignmentRightBottom,
-//Ïà¶Ô¶¨Î»
+//ç›¸å¯¹å®šä½
 	kAlignmentLeft,
 	kAlignmentRight,
 	kAlignmentTop,
@@ -44,104 +44,104 @@ public:
 	virtual ~UIControl();
 	void	SetAttribute(const char *name,const char *value);
 public:
-	//¿Ø¼şÃû
+	//æ§ä»¶å
 	void			SetControlName(const char *name);
 	std::string		GetControlName() const;
-	//TagÖµ
+	//Tagå€¼
 	void		SetTag(int tag);
 	int			GetTag() const;
-	//¿Ø¼şÍâ±ß¾à
+	//æ§ä»¶å¤–è¾¹è·
 	void		SetMargin(const UIMargin &margin);
 	void		SetMargin(int left,int top = 0,int right = 0,int bottom = 0);
-	//¿Ø¼ş´óĞ¡
+	//æ§ä»¶å¤§å°
 	void		SetSize(const UISize &size);
 	void		SetSize(int width,int height);
 	UISize		GetSize() const;
-	//¿Ø¼ş¶¨Î»·½Ê½
+	//æ§ä»¶å®šä½æ–¹å¼
 	void		SetAlignmentType(Alignment type);
 	Alignment	GetAlignmentType() const;
-	//¿Ø¼ş¿É¼ûĞÔ
+	//æ§ä»¶å¯è§æ€§
 	void		SetVisible(BOOL visible);
 	BOOL		IsVisible() const;
-	//¿Ø¼ş¿ÉÓÃĞÔ
+	//æ§ä»¶å¯ç”¨æ€§
 	void		SetEnabled(BOOL enabled);
 	BOOL		IsEnabled() const;
-	//¸¸¿Ø¼ş
+	//çˆ¶æ§ä»¶
 	void		SetParent(UIControl *control);
 	UIControl*	GetParent() const;
-	//Ìí¼Ó/ÒÆ³ı×Ó¿Ø¼ş
+	//æ·»åŠ /ç§»é™¤å­æ§ä»¶
 	void		AddSubControl(UIControl *control);
 	void		RemoveSubControl(const std::string &name);
-	//»æÖÆ
+	//ç»˜åˆ¶
 	virtual	void	RenderSelf(const UIRect *rect);
-	//ÖØÅÅ°æ
+	//é‡æ’ç‰ˆ
 	virtual	void	ArrangeSelf(const UIRect *parent_frame);
-	//²éÕÒ
+	//æŸ¥æ‰¾
 	UIControl*	LookupMouseFocusedControl(const UIPoint &point);
-	//ÉèÖÃframe
+	//è®¾ç½®frame
 	void		SetRootFrame(const UIRect *rect);
 	void		SetFrame(const UIRect *rect);
 	UIRect		GetFrame() const;
-	//ÉèÖÃ¸¸´°¿Ú
+	//è®¾ç½®çˆ¶çª—å£
 	void	SetParentWin(UIWindow *window);
 	UIWindow*	GetParentWin(); 
-	//ÉèÖÃĞèÒª»æÖÆºÍÉèÖÃĞèÒª´ÓÅÅ°æ
+	//è®¾ç½®éœ€è¦ç»˜åˆ¶å’Œè®¾ç½®éœ€è¦ä»æ’ç‰ˆ
 	void	SetNeedDisplay();
 	void	SetNeedLayout();
-	//ÉèÖÃ¹â±ê×´Ì¬
+	//è®¾ç½®å…‰æ ‡çŠ¶æ€
 	void	SetCursor(const wchar_t *cursor_name);
-	//Êó±êÏûÏ¢
+	//é¼ æ ‡æ¶ˆæ¯
 	virtual	BOOL	OnMouseMessage(UINT message,WPARAM wParam,LPARAM lParam);
 	virtual	void	OnMouseEntered(UINT flag,const UIPoint &point);
 	virtual	void	OnMouseExited(UINT flag,const UIPoint &point);
-	//Êó±ê×ó¼üÏûÏ¢
+	//é¼ æ ‡å·¦é”®æ¶ˆæ¯
 	virtual	BOOL	OnLButtonDown(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnLButtonUp(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnLButtonDoubleClicked(UINT flag,const UIPoint &point);
-	//Êó±êÓÒ¼üÏûÏ¢
+	//é¼ æ ‡å³é”®æ¶ˆæ¯
 	virtual	BOOL	OnRButtonDown(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnRButtonUp(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnRButtonDoubleClicked(UINT flag,const UIPoint &point);
-	//Êó±êÖĞ¼üÏûÏ¢
+	//é¼ æ ‡ä¸­é”®æ¶ˆæ¯
 	virtual	BOOL	OnMButtonDown(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnMButtonUp(UINT flag,const UIPoint &point);
 	virtual	BOOL	OnMButtonDoubleClicked(UINT flag,const UIPoint &point);
-	//Êó±ê¹öÂÖ
+	//é¼ æ ‡æ»šè½®
 	virtual void	OnMouseWheel(UINT flag, short delta,const UIPoint &point);
-	//Êó±êÒÆ¶¯
+	//é¼ æ ‡ç§»åŠ¨
 	virtual	BOOL	OnMouseMove(UINT flag,const UIPoint &point);
 protected:
-	//·¢ËÍÍ¨ÖªÊÂ¼ş
+	//å‘é€é€šçŸ¥äº‹ä»¶
 	void	SendNotify(UINotifyEvent event);
 private:
-	//»æÖÆ
+	//ç»˜åˆ¶
 	void	Render(const UIRect *parent_rect);
-	//ÖØÅÅ°æ;
+	//é‡æ’ç‰ˆ;
 	void	Arrange(const UIRect *parent_frame);
 	void	ArrangeChildren(const UIRect *parent_frame);
-	//ÉèÖÃµİ¹éÉèÖÃ×Ó¿Ø¼şµÄ¸¸Ç×¿É¼ûĞÔºÍ¿ÉÓÃĞÔ
+	//è®¾ç½®é€’å½’è®¾ç½®å­æ§ä»¶çš„çˆ¶äº²å¯è§æ€§å’Œå¯ç”¨æ€§
 	void	SetParentVisibleRecursive(BOOL visible);
 	void	SetParentEnabledRecursive(BOOL enabled);
-	//ÊÇ·ñÔÚµ±Ç°¿Ø¼şÄÚ
+	//æ˜¯å¦åœ¨å½“å‰æ§ä»¶å†…
 	BOOL		IsMouseInControl(const UIPoint &point);
-	//ÅÉ·¢Êó±êÏûÏ¢
+	//æ´¾å‘é¼ æ ‡æ¶ˆæ¯
 	void		DispatchMouseMessage(UINT message,WPARAM wParam,LPARAM lParam);
-	//Í¨¹ıÊôĞÔ·µ»ØAlignment
+	//é€šè¿‡å±æ€§è¿”å›Alignment
 	Alignment	GetAlignmentByString(const char *value);
 protected:
-	std::vector<UIControl *>	children_;		//×Ó¿Ø¼ş
-	UISize						size_;			//¿Ø¼ş´óĞ¡
-	Alignment					alignment_type_;//¶¨Î»·½Ê½
-	UIMargin					margin_;		//Íâ±ß¾à
-	UIRect						frame_;			//ÔÚ´°¿ÚÉÏµÄ¾ø¶ÔÎ»ÖÃ
-	UIControl					*parent_;		//¸¸¿Ø¼ş
-	UIWindow					*parent_win_;	//¸¸´°¿Ú
-	std::string					name_;			//¿Ø¼şÃû
-	int							tag_;			//tagÖµ
-	BOOL						visible_;		//ÊÇ·ñ¿É¼û
-	BOOL						parent_visible_;//¸¸Ç×ÊÇ·ñ¿É¼û
-	BOOL						enabled_;		//ÊÇ·ñ¿ÉÓÃ
-	BOOL						parent_enabled_;//¸¸Ç×ÊÇ·ñ¿ÉÓÃ
+	std::vector<UIControl *>	children_;		//å­æ§ä»¶
+	UISize						size_;			//æ§ä»¶å¤§å°
+	Alignment					alignment_type_;//å®šä½æ–¹å¼
+	UIMargin					margin_;		//å¤–è¾¹è·
+	UIRect						frame_;			//åœ¨çª—å£ä¸Šçš„ç»å¯¹ä½ç½®
+	UIControl					*parent_;		//çˆ¶æ§ä»¶
+	UIWindow					*parent_win_;	//çˆ¶çª—å£
+	std::string					name_;			//æ§ä»¶å
+	int							tag_;			//tagå€¼
+	BOOL						visible_;		//æ˜¯å¦å¯è§
+	BOOL						parent_visible_;//çˆ¶äº²æ˜¯å¦å¯è§
+	BOOL						enabled_;		//æ˜¯å¦å¯ç”¨
+	BOOL						parent_enabled_;//çˆ¶äº²æ˜¯å¦å¯ç”¨
 	
 	friend	UIControl;
 	friend	UIWindow;

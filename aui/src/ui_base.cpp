@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_base.cpp
- * @brief   UI»ù´¡ÉèÊ©
+ * @brief   UIåŸºç¡€è®¾æ–½
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-5-2
  * @website www.xiangwangfeng.com

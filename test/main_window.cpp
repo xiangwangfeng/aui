@@ -1,4 +1,4 @@
-#include "main_window.h"
+ï»¿#include "main_window.h"
 #include "util.h"
 
 
@@ -67,7 +67,7 @@ void	MainWindow::CreateControls()
 	url_label->SetMargin(0,70);
 	url_label->SetAlignmentType(kAlignmentCenterTop);
 	url_label->LoadConfig(*GetDefaultLabelConfig());
-	url_label->SetText(L"ÎÒÊÇÒ»¸öLabel£¬ÄãÐÅÃ´£¿");
+	url_label->SetText(L"æˆ‘æ˜¯ä¸€ä¸ªLabelï¼Œä½ ä¿¡ä¹ˆï¼Ÿ");
 	url_label->SetURL(L"www.163.com");
 	current_label_ = url_label;
 	root_control->AddSubControl(url_label);
@@ -77,6 +77,6 @@ void	MainWindow::CreateControls()
 	open_yxsg_button->SetMargin(0,130);
 	open_yxsg_button->SetAlignmentType(kAlignmentCenterTop);
 	open_yxsg_button->LoadButtonConfig(*GetDefaultButtonConfig());
-	open_yxsg_button->SetText(L"Ó¢ÐÛÈý¹ú");
+	open_yxsg_button->SetText(L"è‹±é›„ä¸‰å›½");
 	root_control->AddSubControl(open_yxsg_button);
 }

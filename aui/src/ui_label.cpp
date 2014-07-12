@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * @file    ui_label.cpp
  * @brief   UILabel
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
@@ -94,13 +94,13 @@ void	UILabel::LoadConfig(const UILableConfig &config)
 void	UILabel::RenderSelf(const UIRect *rect)
 {
 	UICanvas *canvas = CurrentCanvas();
-	//»æÖÆ±³¾°
+	//ç»˜åˆ¶èƒŒæ™¯
 	if (!config_.bk_image_.empty())
 	{
 		canvas->DrawImage(config_.bk_image_,&frame_);
 	}
 
-	//ÑÕÉ«
+	//é¢œè‰²
 	UIColor color = config_.is_hyperlink_ ? config_.text_link_color_ : config_.text_color_;
 	//format
 	UINT format = config_.hor_alignment_ | config_.ver_alignment_;
@@ -112,7 +112,7 @@ void	UILabel::RenderSelf(const UIRect *rect)
 	{
 		format |= DT_WORDBREAK;
 	}
-	//ÏÂ»®Ïß
+	//ä¸‹åˆ’çº¿
 	config_.font_.lfUnderline = (config_.always_show_underline_ ||
 								(config_.is_hyperlink_ && is_mouse_in_));
 

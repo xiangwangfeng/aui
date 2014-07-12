@@ -1,4 +1,4 @@
-#include <Windows.h>
+Ôªø#include <Windows.h>
 #include "main_window.h"
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int CmdShow)
@@ -7,7 +7,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	InitAUI();
 
 	MainWindow window;
-	if (window.Create(NULL,L"√´µƒ÷˜¥∞ø⁄",WS_OVERLAPPEDWINDOW | WS_VISIBLE,0,CW_USEDEFAULT,CW_USEDEFAULT,300,350))
+	if (window.Create(NULL,L"ÊØõÁöÑ‰∏ªÁ™óÂè£",WS_OVERLAPPEDWINDOW | WS_VISIBLE,0,CW_USEDEFAULT,CW_USEDEFAULT,300,350))
 	{
 		window.SetWindowMinSize(300,350);
 		window.SetAsMainWindow();

@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_base.h
- * @brief   UI»ù´¡ÉèÊ©
+ * @brief   UIåŸºç¡€è®¾æ–½
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-5-2
  * @website www.xiangwangfeng.com
@@ -85,8 +85,8 @@ enum TextAlignment
 class UIControl;
 enum UINotifyEvent
 {
-	kEventClick,		//µã»÷ÊÂ¼ş
-	kEventTextChanged,	//ÎÄ±¾±ä»¯ÊÂ¼ş
+	kEventClick,		//ç‚¹å‡»äº‹ä»¶
+	kEventTextChanged,	//æ–‡æœ¬å˜åŒ–äº‹ä»¶
 };
 
 class IUINotify

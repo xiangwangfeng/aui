@@ -1,4 +1,4 @@
-#include "util.h"
+﻿#include "util.h"
 #include <Windows.h>
 
 std::wstring	Util::GetAppPath()

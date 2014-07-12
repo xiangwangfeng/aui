@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_window.cpp
- * @brief   Í¨ÓÃ´°¿ÚÀà
+ * @brief   é€šç”¨çª—å£ç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-22
  * @website www.xiangwangfeng.com
@@ -37,16 +37,16 @@ LRESULT	UIWindow::HandleMessages(UINT message, WPARAM wParam, LPARAM lParam)
 
 	switch (message)
 	{
-	//»æÖÆ
+	//ç»˜åˆ¶
 	case WM_PAINT:
 		HandleWMPaintMessage();
 		message_handled_result = TRUE;
 		break;
-	//¹Ø±Õ
+	//å…³é—­
 	case WM_CLOSE:
 		is_closing_ = TRUE;
 		break;
-	//Êó±êÏûÏ¢
+	//é¼ æ ‡æ¶ˆæ¯
 	case WM_MOUSELEAVE:
 	case WM_MOUSEMOVE:
 	case WM_LBUTTONDOWN:
@@ -67,7 +67,7 @@ LRESULT	UIWindow::HandleMessages(UINT message, WPARAM wParam, LPARAM lParam)
 		break;
 	}
 
-	//Èç¹ûÉèÖÃÎªÒÑ´¦Àí¾Í²»ĞèÒªµ÷ÓÃ»ùÀà·½·¨
+	//å¦‚æœè®¾ç½®ä¸ºå·²å¤„ç†å°±ä¸éœ€è¦è°ƒç”¨åŸºç±»æ–¹æ³•
 	return message_handled_result ? message_handled_result 
 			: __super::HandleMessages(message, wParam, lParam);
 }
@@ -162,7 +162,7 @@ void	UIWindow::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
 	
 }
 
-//////////////////////////////////////Ë½ÓĞ·½·¨////////////////////////////////////
+//////////////////////////////////////ç§æœ‰æ–¹æ³•////////////////////////////////////
 void	UIWindow::Render(const UIRect *rect)
 {
 	if (root_control_)

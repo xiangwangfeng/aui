@@ -1,4 +1,4 @@
-#include "aui.h"
+﻿#include "aui.h"
 #include "ui_resource_cache.h"
 
 #ifdef _DEBUG

@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_canvas.cpp
- * @brief   »­²¼½Ó¿Ú¶¨ÒåÀà
+ * @brief   ç”»å¸ƒæ¥å£å®šä¹‰ç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-6-24
  * @website www.xiangwangfeng.com

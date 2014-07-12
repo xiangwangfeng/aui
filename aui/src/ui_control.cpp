@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_control.cpp
- * @brief   UI¿Ø¼ş»ùÀà
+ * @brief   UIæ§ä»¶åŸºç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-22
  * @website www.xiangwangfeng.com
@@ -132,7 +132,7 @@ void	UIControl::SetVisible(BOOL visible)
 {
 	visible_ = visible;
 	
-	//µİ¹éÉèÖÃ×Ó¿Ø¼ş¸¸Ç×¿É¼ûĞÔ
+	//é€’å½’è®¾ç½®å­æ§ä»¶çˆ¶äº²å¯è§æ€§
 	for (size_t i = 0; i < children_.size(); i++)
 	{
 		children_[i]->SetParentVisibleRecursive(visible);
@@ -148,7 +148,7 @@ void	UIControl::SetEnabled(BOOL enabled)
 {
 	enabled_ = enabled;
 
-	//µİ¹éÉèÖÃ×Ó¿Ø¼ş¸¸Ç×¿ÉÓÃĞÔ
+	//é€’å½’è®¾ç½®å­æ§ä»¶çˆ¶äº²å¯ç”¨æ€§
 	for (size_t i = 0; i < children_.size(); i++)
 	{
 		children_[i]->SetParentEnabledRecursive(enabled);
@@ -208,12 +208,12 @@ void	UIControl::RemoveSubControl(const std::string &name)
 
 void	UIControl::Render(const UIRect *parent_rect)
 {
-	//Éú³É²Ã¼ôÇøÓò
+	//ç”Ÿæˆè£å‰ªåŒºåŸŸ
 	UIRect rect = UIRect::IntersectRect(&frame_,parent_rect);
 	CurrentCanvas()->SelectClipedRect(&rect);
 	RenderSelf(&rect);
 
-	//»æÖÆ×Ó¿Ø¼ş
+	//ç»˜åˆ¶å­æ§ä»¶
 	for (size_t i = 0; i <children_.size(); i++)
 	{
 		UIControl *child = children_[i];
@@ -226,7 +226,7 @@ void	UIControl::Render(const UIRect *parent_rect)
 
 void	UIControl::RenderSelf(const UIRect *rect)
 {
-	//ÓÉ×Ó¿Ø¼ş»æÖÆ
+	//ç”±å­æ§ä»¶ç»˜åˆ¶
 }
 
 void	UIControl::ArrangeSelf(const UIRect *parent_frame)
@@ -237,7 +237,7 @@ void	UIControl::ArrangeSelf(const UIRect *parent_frame)
 	int height = size_.cy;
 	switch(alignment_type_)
 	{
-		//¾ø¶Ô¶¨Î»
+		//ç»å¯¹å®šä½
 	case kAlignmentLeftTop:
 		{
 			x = parent_frame->GetX() + margin_.left;;
@@ -292,7 +292,7 @@ void	UIControl::ArrangeSelf(const UIRect *parent_frame)
 			y = parent_frame->GetY() + parent_frame->GetHeight() - size_.cy - margin_.bottom;
 			break;
 		}
-		//Ïà¶Ô¶¨Î»
+		//ç›¸å¯¹å®šä½
 	case kAlignmentLeft:
 		{
 			x		= parent_frame->GetX() + margin_.left;
@@ -403,13 +403,13 @@ BOOL	UIControl::OnMouseMessage(UINT message,WPARAM wParam,LPARAM lParam)
 {
 	UIPoint	point((short)LOWORD(lParam), (short)HIWORD(lParam));
 	UINT flag = (UINT)wParam;
-	//message_handledËµÃ÷£ºÈç¹û·µ»ØTRUEÔòÏûÏ¢²»¼ÌĞøÍù¸¸¿Ø¼şÅ×
+	//message_handledè¯´æ˜ï¼šå¦‚æœè¿”å›TRUEåˆ™æ¶ˆæ¯ä¸ç»§ç»­å¾€çˆ¶æ§ä»¶æŠ›
 
-	//¶ÔÓÚWM_MOUSEHOVEµÄmessage_handledµÄ´¦Àí¿ÉÒÔÓĞÈıÖÖ×÷·¨
-	//1.OnMouseEnteredÌí¼Ó·µ»ØÖµ£¬ÓĞÖØĞ´·½·¨À´ÅĞ¶Ï
-	//2.Ä¬ÈÏÉèÖÃÎªTRUE£¬ÈÏÎªÊó±ê´Ó¸¸¿Ø¼ş½øÈë×Ó¿Ø¼şºó£¬¿Ø¼ş¼´±äÎª·ÇHOVER×´Ì¬
-	//3.Ä¬ÈÏÉèÖÃÎªFALSE£¬ÈÏÎªÊó±êÖ»Òª¿Ø¼şÖĞ£¬²»¹ÜÓĞÃ»ÓĞ½øÈëµ½×Ó¿Ø¼şÖĞ£¬Ëü¶¼ÎªHOVER×´Ì¬
-	//±¾¿â²ÉÓÃµÚ¶şÖÖ×÷·¨
+	//å¯¹äºWM_MOUSEHOVEçš„message_handledçš„å¤„ç†å¯ä»¥æœ‰ä¸‰ç§ä½œæ³•
+	//1.OnMouseEnteredæ·»åŠ è¿”å›å€¼ï¼Œæœ‰é‡å†™æ–¹æ³•æ¥åˆ¤æ–­
+	//2.é»˜è®¤è®¾ç½®ä¸ºTRUEï¼Œè®¤ä¸ºé¼ æ ‡ä»çˆ¶æ§ä»¶è¿›å…¥å­æ§ä»¶åï¼Œæ§ä»¶å³å˜ä¸ºéHOVERçŠ¶æ€
+	//3.é»˜è®¤è®¾ç½®ä¸ºFALSEï¼Œè®¤ä¸ºé¼ æ ‡åªè¦æ§ä»¶ä¸­ï¼Œä¸ç®¡æœ‰æ²¡æœ‰è¿›å…¥åˆ°å­æ§ä»¶ä¸­ï¼Œå®ƒéƒ½ä¸ºHOVERçŠ¶æ€
+	//æœ¬åº“é‡‡ç”¨ç¬¬äºŒç§ä½œæ³•
 	BOOL message_handled = FALSE;
 	switch(message)
 	{
@@ -419,11 +419,11 @@ BOOL	UIControl::OnMouseMessage(UINT message,WPARAM wParam,LPARAM lParam)
 		break;
 	case WM_MOUSELEAVE:
 		OnMouseExited(flag,point);
-		message_handled = TRUE;	//WM_MOUSELEAVE  ÎŞĞèÍù¸¸¿Ø¼şÅ× 
+		message_handled = TRUE;	//WM_MOUSELEAVE  æ— éœ€å¾€çˆ¶æ§ä»¶æŠ› 
 		break;
 	case WM_MOUSEWHEEL:
 		OnMouseWheel(GET_KEYSTATE_WPARAM(wParam),GET_WHEEL_DELTA_WPARAM(wParam),point);
-		message_handled = TRUE;	//WM_MOUSEWHEEL  ÎŞĞèÍù¸¸¿Ø¼şÅ×
+		message_handled = TRUE;	//WM_MOUSEWHEEL  æ— éœ€å¾€çˆ¶æ§ä»¶æŠ›
 		break;
 	case WM_MOUSEMOVE:
 		message_handled =  OnMouseMove(flag,point);
@@ -528,7 +528,7 @@ BOOL	UIControl::OnMouseMove(UINT flag,const UIPoint &point)
 }
 
 
-/////////////////////////////////////Ë½ÓĞ·½·¨/////////////////////////////////////
+/////////////////////////////////////ç§æœ‰æ–¹æ³•/////////////////////////////////////
 void	UIControl::Arrange(const UIRect * parent_frame)
 {
 	ArrangeSelf(parent_frame);

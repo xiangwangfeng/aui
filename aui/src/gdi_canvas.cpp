@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    gdi_canvas.cpp
- * @brief   GDI»­²¼
+ * @brief   GDIç”»å¸ƒ
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-22
  * @website www.xiangwangfeng.com

@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    aui.h
- * @brief   ui¿âÍ·ÎÄ¼þ
+ * @brief   uiåº“å¤´æ–‡ä»¶
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-9
  * @website www.xiangwangfeng.com

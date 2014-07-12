@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include "../aui/include/aui.h"
 

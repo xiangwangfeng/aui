@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    native_window.h
- * @brief   »ù´¡µÄ´°¿ÚÀà·â×°
+ * @brief   åŸºç¡€çš„çª—å£ç±»å°è£…
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-9
  * @website www.xiangwangfeng.com
@@ -46,7 +46,7 @@ public:
 	LRESULT SendMessage(UINT message, WPARAM wParam = 0, LPARAM lParam = 0);
 
 	void	SetAsMainWindow() {is_main_window_ = TRUE;}
-//ÏûÏ¢Ñ­»·
+//æ¶ˆæ¯å¾ªç¯
 	virtual BOOL AfterCreated();
 	virtual BOOL OnEraseBkgnd();
 	virtual void OnTimer(UINT id);

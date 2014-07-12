@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_macros.h
- * @brief   uiºê¶¨Òå
+ * @brief   uiå®å®šä¹‰
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-6-24
  * @website www.xiangwangfeng.com

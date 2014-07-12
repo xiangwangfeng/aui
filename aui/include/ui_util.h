@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_util.h
- * @brief   UI¸¨Öú·½·¨
+ * @brief   UIè¾…åŠ©æ–¹æ³•
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-7-7
  * @website www.xiangwangfeng.com

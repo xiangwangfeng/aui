@@ -1,4 +1,4 @@
-/**
+ï»¿/**
  * @file    ui_panel.h
  * @brief   UIPanel
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
@@ -11,9 +11,9 @@
 class UIPanel : public UIControl
 {
 public:	
-	//±³¾°É«
+	//èƒŒæ™¯è‰²
 	void	SetBKColor(UIColor color);
-	//±³¾°Í¼Æ¬
+	//èƒŒæ™¯å›¾ç‰‡
 	void	SetBKImage(const std::wstring &filepath);
 public:
 	virtual	void	RenderSelf(const UIRect *rect);

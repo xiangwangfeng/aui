@@ -1,4 +1,4 @@
-#include "ui_resource_cache.h"
+﻿#include "ui_resource_cache.h"
 #include "thirdparty/cximage/ximage.h"
 
 UIResourceCache* UIResourceCache::cache_ = NULL;

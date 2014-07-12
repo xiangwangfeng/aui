@@ -1,4 +1,4 @@
-/**
+Ôªø/**
  * @file    ui_button.cpp
  * @brief   UIButton
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
@@ -159,7 +159,7 @@ void	UIButton::RenderSelf(const UIRect *rect)
 }
 
 
-//////////////////////////////////ÀΩ”–∑Ω∑®////////////////////////////////////////
+//////////////////////////////////ÁßÅÊúâÊñπÊ≥ï////////////////////////////////////////
 void	UIButton::SetButtonStatus(UIButtonStatus status)
 {
 	button_status_ = status;

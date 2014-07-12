@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_resource_manager.h
- * @brief   UI×ÊÔ´»º´æ
+ * @brief   UIèµ„æºç¼“å­˜
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-6-28
  * @website www.xiangwangfeng.com

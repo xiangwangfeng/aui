@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    ui_window.h
- * @brief   Í¨ÓÃ´°¿ÚÀà
+ * @brief   é€šç”¨çª—å£ç±»
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-22
  * @website www.xiangwangfeng.com
@@ -21,43 +21,43 @@ class UIWindow : public NativeWindow
 public:
 	UIWindow();
 	~UIWindow();
-	//ÏûÏ¢Ñ­»·
+	//æ¶ˆæ¯å¾ªç¯
 	virtual LRESULT	HandleMessages(UINT message, WPARAM wParam, LPARAM lParam);
-	//Ìí¼Ó¸ù¿Ø¼ş
+	//æ·»åŠ æ ¹æ§ä»¶
 	void	AddRootControl(UIControl *root_control);
-	//¶Ô¿Ø¼ş½øĞĞÅÅ°æ
+	//å¯¹æ§ä»¶è¿›è¡Œæ’ç‰ˆ
 	void	UpdateLayout();
-	//Ë¢ĞÂ½çÃæ
+	//åˆ·æ–°ç•Œé¢
 	void	Invalidate(const UIRect *rect);
-	//ÉèÖÃ´°¿Ú×î´ó×îĞ¡Öµ
+	//è®¾ç½®çª—å£æœ€å¤§æœ€å°å€¼
 	void	SetWindowMinSize(const UISize *size);
 	void	SetWindowMinSize(int width,int height);
 	void	SetWindowMaxSize(const UISize *size);
 	void	SetWindowMaxSize(int width,int height);
-	//Ìí¼Ó¹Û²ìÕß
+	//æ·»åŠ è§‚å¯Ÿè€…
 	void	AddNotifier(IUINotify *notifier);
 	void	FireEvent(UINotifyEvent event,UIControl *contorl);
-	//¼Ì³Ğ×ÔNativeWindowµÄ·½·¨
+	//ç»§æ‰¿è‡ªNativeWindowçš„æ–¹æ³•
 	virtual void	OnSize(UINT type,int cx,int cy);
 	virtual void	OnGetMinMaxInfo(MINMAXINFO* lpMMI);
 private:
-	//»æÖÆ·½·¨
+	//ç»˜åˆ¶æ–¹æ³•
 	void	Render(const UIRect *rect);
-	//Êµ¼ÊÅÅ°æ·½·¨
+	//å®é™…æ’ç‰ˆæ–¹æ³•
 	void	DoUpdateLayout();
-	//´¦ÀíWM_PAINT
+	//å¤„ç†WM_PAINT
 	void	HandleWMPaintMessage();
-	//´¦ÀíÊó±êÏûÏ¢
+	//å¤„ç†é¼ æ ‡æ¶ˆæ¯
 	void	HandleMouseMessage(UINT message,WPARAM wParam,LPARAM lParam);
-	//ÉèÖÃµ±Ç°Êó±ê
+	//è®¾ç½®å½“å‰é¼ æ ‡
 	void	SetCurrentMouseControl(UIControl *control);
 private:
-	BOOL		is_closing_;			//ÕıÔÚ¹Ø±Õ
-	BOOL		resize_needed_;			//ĞèÒªÖØÅÅ°æ
-	BOOL		is_mouse_in_;			//Êó±êÊÇ·ñÔÚ´°¿ÚÄÚ
-	UIControl	*current_mouse_control_;//µ±Ç°Êó±ê½¹µã¿Ø¼ş
-	UIControl	*root_control_;			//¸ù½Úµã
-	UISize		min_size_;				//´°¿Ú×îĞ¡´óĞ¡
-	UISize		max_size_;				//´°¿Ú×î´ó´óĞ¡
+	BOOL		is_closing_;			//æ­£åœ¨å…³é—­
+	BOOL		resize_needed_;			//éœ€è¦é‡æ’ç‰ˆ
+	BOOL		is_mouse_in_;			//é¼ æ ‡æ˜¯å¦åœ¨çª—å£å†…
+	UIControl	*current_mouse_control_;//å½“å‰é¼ æ ‡ç„¦ç‚¹æ§ä»¶
+	UIControl	*root_control_;			//æ ¹èŠ‚ç‚¹
+	UISize		min_size_;				//çª—å£æœ€å°å¤§å°
+	UISize		max_size_;				//çª—å£æœ€å¤§å¤§å°
 	std::vector<IUINotify *>	notifiers;
 };

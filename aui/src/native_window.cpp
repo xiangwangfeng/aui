@@ -1,6 +1,6 @@
-/**
+ï»¿/**
  * @file    native_window.cpp
- * @brief   »ù´¡µÄ´°¿ÚÀà·â×°
+ * @brief   åŸºç¡€çš„çª—å£ç±»å°è£…
  * @author  xiangwangfeng <xiangwangfeng@gmail.com>
  * @data	2012-4-9
  * @website www.xiangwangfeng.com
