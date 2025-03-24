@@ -9,11 +9,7 @@
 #include <string>
 #include "ui_base.h"
 
-namespace AUI{
-
 std::wstring UTF8toUTF16(const char *source);
 void GetDefaultUIFont(UIFont &font);
 UIFont *GetGlobalEditFont();
 void SafeOpenURL(const wchar_t *url,int flag = SW_SHOWMAXIMIZED, BOOL use_default_browser = TRUE);
-
-};

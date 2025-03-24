@@ -10,7 +10,7 @@
 #include <Windows.h>
 #include "ui_canvas.h"
 
-class CxImage;
+class UIImage;
 
 class GDICanvas: public UICanvas
 {

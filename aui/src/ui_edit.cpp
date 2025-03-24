@@ -87,7 +87,7 @@ void	UIEdit::RenderSelf(const UIRect *rect)
 
 	canvas->DrawText(text,config_.text_.length(),&text_rect,config_.text_color_,
 					kTextAlignmentVCenter | DT_SINGLELINE| DT_NOPREFIX | DT_EDITCONTROL,
-					AUI::GetGlobalEditFont());
+					GetGlobalEditFont());
 }
 
 void	UIEdit::OnMouseEntered(UINT flag,const UIPoint &point)
@@ -138,7 +138,7 @@ void	UIEditWindow::Init(UIEdit *edit)
 	}
 	Create(edit->GetParentWin()->GetHWND(), NULL, style, 0, rect);
 	HWND hwnd = GetHWND();
-	HFONT font = CreateFontIndirect(AUI::GetGlobalEditFont());
+	HFONT font = CreateFontIndirect(GetGlobalEditFont());
 	SetWindowFont(hwnd,font, TRUE);
 	SetWindowText(edit->config_.text_.c_str());
 	Edit_SetModify(hwnd, TRUE);

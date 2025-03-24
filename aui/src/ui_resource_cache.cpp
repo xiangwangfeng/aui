@@ -1,5 +1,5 @@
 ﻿#include "ui_resource_cache.h"
-#include "thirdparty/cximage/ximage.h"
+#include "ui_image.h"
 
 UIResourceCache* UIResourceCache::cache_ = NULL;
 
@@ -24,28 +24,28 @@ UIResourceCache::UIResourceCache()
 
 UIResourceCache::~UIResourceCache()
 {
-	for (std::map<std::wstring,CxImage *>::iterator it = image_caches_.begin();
-		it != image_caches_.end();it++)
+	for (std::map<std::wstring, UIImage*>::iterator it = image_caches_.begin();
+		it != image_caches_.end(); it++)
 	{
 		delete it->second;
 	}
 }
 
-BOOL	UIResourceCache::GetImageByFilePath(const std::wstring &filepath,CxImage **image)
+BOOL	UIResourceCache::GetImageByFilePath(const std::wstring &filepath, UIImage** image)
 {
 	if (image_caches_.find(filepath) == image_caches_.end())
 	{
 		BOOL find = FALSE;
-		CxImage *cximage = new CxImage();
-		if (cximage->Load(filepath.c_str()))
+		UIImage* uiimage = new UIImage();
+		if (uiimage->LoadFromFile(filepath.c_str()))
 		{
-			image_caches_[filepath] = cximage;
-			*image = cximage;
+			image_caches_[filepath] = uiimage;
+			*image = uiimage;
 			find = TRUE;
 		}
 		else
 		{
-			delete image;
+			delete uiimage;
 		}
 		return find;
 	}

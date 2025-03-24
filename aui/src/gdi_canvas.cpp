@@ -9,7 +9,7 @@
 #include "gdi_canvas.h"
 #include "ui_macros.h"
 #include "ui_resource_cache.h"
-#include "thirdparty/cximage/ximage.h"
+#include "ui_image.h"
 
 GDICanvas::GDICanvas(HDC hdc,int width,int height)
 :hdc_(hdc),
@@ -65,19 +65,19 @@ void	GDICanvas::SelectClipedRect(const UIRect *rect)
 
 void	GDICanvas::DrawImage(const std::wstring &filepath,const UIRect *src,const UIRect *dst)
 {
-	CxImage *image = NULL;
+	UIImage *image = NULL;
 	if (UIResourceCache::GetInstance()->GetImageByFilePath(filepath,&image))
 	{
-		image->Draw(mem_hdc_,dst->ToRect(),&src->ToRect());
+		image->Draw(mem_hdc_, dst, src);
 	}
 }
 
 void	GDICanvas::DrawImage(const std::wstring &filepath,const UIRect *dst)
 {
-	CxImage *image = NULL;
+	UIImage *image = NULL;
 	if (UIResourceCache::GetInstance()->GetImageByFilePath(filepath,&image))
 	{
-		image->Draw(mem_hdc_,dst->ToRect());
+		image->Draw(mem_hdc_, dst);
 	}
 }
 

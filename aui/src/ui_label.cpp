@@ -19,7 +19,7 @@ always_show_underline_(FALSE),
 hor_alignment_(kTextAlignmentVCenter),
 ver_alignment_(kTextAlignmentCenter)
 {
-	AUI::GetDefaultUIFont(font_);
+	GetDefaultUIFont(font_);
 }
 
 UILabel::UILabel()
@@ -177,6 +177,6 @@ void	UILabel::OnClicked()
 	SetCursor(IDC_HAND);
 	if (config_.is_hyperlink_)
 	{
-		AUI::SafeOpenURL(config_.url_.c_str());
+		SafeOpenURL(config_.url_.c_str());
 	}
 }

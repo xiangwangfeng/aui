@@ -20,12 +20,14 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -60,7 +62,8 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalDependencies>cximage_d.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
     </Lib>
     <Lib>
       <AdditionalLibraryDirectories>$(ProjectDir)\libs</AdditionalLibraryDirectories>
@@ -86,7 +89,8 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <Lib>
-      <AdditionalDependencies>cximage.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(ProjectDir)\libs</AdditionalLibraryDirectories>
     </Lib>
@@ -94,11 +98,13 @@
   <ItemGroup>
     <ClCompile Include="src\aui.cpp" />
     <ClCompile Include="src\gdi_canvas.cpp" />
+    <ClCompile Include="src\gdi_image.cpp" />
     <ClCompile Include="src\native_window.cpp" />
     <ClCompile Include="src\ui_base.cpp" />
     <ClCompile Include="src\ui_button.cpp" />
     <ClCompile Include="src\ui_canvas.cpp" />
     <ClCompile Include="src\ui_edit.cpp" />
+    <ClCompile Include="src\ui_image.cpp" />
     <ClCompile Include="src\ui_label.cpp" />
     <ClCompile Include="src\ui_util.cpp" />
     <ClCompile Include="src\ui_control.cpp" />
@@ -108,8 +114,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\aui.h" />
+    <ClInclude Include="include\gdi_image.h" />
     <ClInclude Include="include\ui_button.h" />
     <ClInclude Include="include\ui_edit.h" />
+    <ClInclude Include="include\ui_image.h" />
     <ClInclude Include="include\ui_label.h" />
     <ClInclude Include="include\ui_util.h" />
     <ClInclude Include="include\ui_macros.h" />

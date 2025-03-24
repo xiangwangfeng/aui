@@ -8,6 +8,8 @@
 
 #endif
 
+static ULONG_PTR g_gdiplusToken = 0;
+
 void	InitAUI()
 {
 	/*
@@ -22,10 +24,22 @@ void	InitAUI()
 
 #endif
 	*/
+
+	// 初始化 GDI+
+	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
+	Gdiplus::GdiplusStartup(&g_gdiplusToken, &gdiplusStartupInput, NULL);
+
 	UIResourceCache::GetInstance();
 }
 
 void	CleanUpAUI()
 {
 	UIResourceCache::FreeInstance();
+
+	// 关闭 GDI+
+	if (g_gdiplusToken != 0)
+	{
+		Gdiplus::GdiplusShutdown(g_gdiplusToken);
+		g_gdiplusToken = 0;
+	}
 }

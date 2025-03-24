@@ -10,7 +10,8 @@
 #include <string>
 #include <map>
 #include <Windows.h>
-class CxImage;
+
+class UIImage;
 
 class UIResourceCache
 {
@@ -20,9 +21,9 @@ public:
 	static void FreeInstance();
 	static UIResourceCache *cache_;
 
-	BOOL GetImageByFilePath(const std::wstring &filepath,CxImage **image);
+	BOOL GetImageByFilePath(const std::wstring &filepath, UIImage** image);
 private:
 	UIResourceCache();
 private:
-	std::map<std::wstring,CxImage *> image_caches_;
+	std::map<std::wstring, UIImage*> image_caches_;
 };

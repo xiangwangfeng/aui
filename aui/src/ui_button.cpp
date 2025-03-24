@@ -15,7 +15,7 @@ text_focus_color_(RGB(0,0,0)),
 text_disable_color_(RGB(163,163,163)),
 text_alignment_(kTextAlignmentCenter)
 {
-	AUI::GetDefaultUIFont(font_);
+	GetDefaultUIFont(font_);
 }
 
 

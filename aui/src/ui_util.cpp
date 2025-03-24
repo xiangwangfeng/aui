@@ -8,8 +8,6 @@
 #include "ui_util.h"
 #include <Windows.h>
 
-namespace AUI{
-
 std::wstring	UTF8toUTF16(const char *source)
 {
 	int length = ::MultiByteToWideChar(CP_UTF8, 0, source, -1, NULL, 0);
@@ -62,5 +60,3 @@ void	SafeOpenURL(const wchar_t *url,int flag,BOOL use_default_browser)
 	}
 }
 
-
-};

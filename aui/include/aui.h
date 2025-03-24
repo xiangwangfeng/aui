@@ -16,6 +16,7 @@
 #include "ui_label.h"
 #include "ui_button.h"
 #include "ui_edit.h"
+#include "ui_image.h"
 
 
 void	InitAUI();
