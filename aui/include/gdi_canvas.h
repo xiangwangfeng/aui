@@ -11,6 +11,7 @@
 #include "ui_canvas.h"
 
 class UIImage;
+class GDIImage;
 
 class GDICanvas: public UICanvas
 {
@@ -24,7 +25,12 @@ public:
 	virtual void	SelectClipedRect(const UIRect *rect);			//选择裁剪区域
 	virtual void	DrawImage(const std::wstring &filepath,const UIRect *src,const UIRect *dst); //绘制图像
 	virtual void	DrawImage(const std::wstring &filepath,const UIRect *dst); //绘制图像
+	virtual void	DrawImage(UIImage *image,const UIRect *src,const UIRect *dst); //绘制图像
+	virtual void	DrawImage(UIImage *image,const UIRect *dst); //绘制图像
 	virtual	void	DrawText(const wchar_t *text,size_t text_length,const UIRect *rect,UIColor text_color,UINT format,const UIFont *font = NULL);//绘制文字
+
+private:
+	bool GDICanvas::DoDrawImage(UIImage*image,const UIRect *src,const UIRect *dst);
 private:
 	HDC	hdc_;			
 	HDC mem_hdc_;		

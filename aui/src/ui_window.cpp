@@ -136,7 +136,7 @@ void	UIWindow::OnSize(UINT type,int cx,int cy)
 void	UIWindow::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
 {
 	HMONITOR hmonitor = MonitorFromWindow(hwnd_, MONITOR_DEFAULTTONEAREST);
-	MONITORINFO minfo;
+	MONITORINFO minfo = {};
 	minfo.cbSize = sizeof(MONITORINFO);
 	GetMonitorInfo(hmonitor, &minfo);
 	UIPoint offset(1,1);
@@ -217,7 +217,7 @@ void	UIWindow::HandleMouseMessage(UINT message,WPARAM wParam,LPARAM lParam)
 	{
 		if (!is_mouse_in_)
 		{
-			TRACKMOUSEEVENT track_mouse_event;
+			TRACKMOUSEEVENT track_mouse_event = {};
 			track_mouse_event.cbSize = sizeof(TRACKMOUSEEVENT);
 			track_mouse_event.dwFlags = TME_LEAVE;
 			track_mouse_event.hwndTrack = GetHWND();

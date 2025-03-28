@@ -5,27 +5,23 @@
 #pragma once
 #include <windows.h>
 #include <gdiplus.h>
+#include "ui_image.h"
 
 class UIRect;
 
-class GDIImage
+class GDIImage : public UIImage
 {
 public:
     GDIImage();
-    ~GDIImage();
+    virtual ~GDIImage();
 
-    // 从文件加载图像
-    bool LoadFromFile(const wchar_t* file_path);
-    // 获取图像宽度
-    int GetWidth() const;
-    // 获取图像高度
-    int GetHeight() const;
-    // 绘制图像
-    bool Draw(HDC hdc, const UIRect* dst_rect, const UIRect* src_rect = nullptr);
-    // 创建新图像
-    bool Create(int width, int height);
-    // 加载图像数据
-    bool LoadFromMemory(const void* buffer, int size);
+    virtual bool LoadFromFile(const wchar_t* file_path) override;
+
+    virtual int GetWidth() const override;
+
+    virtual int GetHeight() const override;
+
+    Gdiplus::Image* GetImage() const {return image_;}
 
 private:
     Gdiplus::Image* image_;

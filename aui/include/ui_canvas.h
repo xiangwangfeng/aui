@@ -10,6 +10,8 @@
 #include <string>
 #include "ui_base.h"
 
+class UIImage;
+
 
 
 class	UICanvas
@@ -20,6 +22,8 @@ public:;
 	virtual void	SelectClipedRect(const UIRect *rect) = 0;
 	virtual void	DrawImage(const std::wstring &filepath,const UIRect *src,const UIRect *dst) = 0;
 	virtual void	DrawImage(const std::wstring &filepath,const UIRect *dst) = 0;
+	virtual void	DrawImage(UIImage *image,const UIRect *src,const UIRect *dst) = 0;
+	virtual void	DrawImage(UIImage *image,const UIRect *dst) = 0;
 	virtual	void	DrawText(const wchar_t *text,size_t text_length,const UIRect *rect,UIColor text_color,UINT format,const UIFont *font = NULL) = 0;
 };
 

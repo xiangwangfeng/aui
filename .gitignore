@@ -38,4 +38,8 @@ Icon
 
 .vs
 
-aui\Debug\
+aui/Debug/
+aui/Release/
+test/Debug/
+test/Release/
+bin/
