@@ -5,6 +5,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 {
 
 	InitAUI();
+	SetRenderBackend(RenderBackend::GDIPlus);
 
 	MainWindow window;
 	if (window.Create(NULL,L"毛的主窗口",WS_OVERLAPPEDWINDOW | WS_VISIBLE,0,CW_USEDEFAULT,CW_USEDEFAULT,300,350))

@@ -19,5 +19,9 @@
 #include "ui_image.h"
 
 
+enum class RenderBackend { GDIPlus, D2D };
+
 void	InitAUI();
 void	CleanUpAUI();
+void	SetRenderBackend(RenderBackend backend);
+RenderBackend	GetCurrentRenderBackend();

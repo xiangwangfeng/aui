@@ -12,18 +12,6 @@ static ULONG_PTR g_gdiplusToken = 0;
 
 void	InitAUI()
 {
-	/*
-#ifdef _DEBUG
-	int nCrt = 0;
-	FILE* fp;
-	AllocConsole();
-	nCrt = _open_osfhandle((long)GetStdHandle(STD_OUTPUT_HANDLE), _O_TEXT);
-	fp = _fdopen(nCrt, "w");
-	*stdout = *fp;
-	setvbuf(stdout, NULL, _IONBF, 0);
-
-#endif
-	*/
 
 	// 初始化 GDI+
 	Gdiplus::GdiplusStartupInput gdiplusStartupInput;
@@ -42,4 +30,14 @@ void	CleanUpAUI()
 		Gdiplus::GdiplusShutdown(g_gdiplusToken);
 		g_gdiplusToken = 0;
 	}
+}
+
+static RenderBackend s_currentRenderBackend = RenderBackend::GDIPlus;
+
+void SetRenderBackend(RenderBackend backend) {
+    s_currentRenderBackend = backend;
+}
+
+RenderBackend GetCurrentRenderBackend() {
+    return s_currentRenderBackend;
 }
